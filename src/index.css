@@ -10,11 +10,10 @@
   display: grid;
   width: 100%;
   height: 100%;
-  background-color: aqua;
   grid-template-columns:repeat(auto-fit, minmax(14rem, 16rem));
 } 
 .search{
-  margin-top: 20px;
+  margin-top: 10px;
   width: 290px;
   height: 50px;
   border-radius: 10px;
@@ -24,14 +23,17 @@
   outline: none;
   font-size: larger;
   text-align: center;
+  margin-left: 750px;
 }
 
 
 .card{
-  float: right;
-  width: 22%;
+  float: left;
+  width: 20%;
   padding: 1px;
-
+  background-color: rgb(234, 188, 6);
+  margin-top: 10px;
+cursor: pointer;
 }
 .card-img{
 width: 14rem;
@@ -64,7 +66,7 @@ line-height: 1.2rem;
   padding-top: 0.5rem;
   margin-top: 1rem;
   cursor: pointer;
-  background-color: rgba(255, 0, 0, 0.3)
+  background-color: rgba(245, 237, 237, 0.3)
 }
 .card-btn:hover{
   color: rgb(125, 19, 19);

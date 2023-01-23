@@ -1,12 +1,12 @@
 import React from "react"
 
-function BotDisplay({name,health,damage,armor,bot_class,catchphrase,image,created_at,updated_at,deleteRobot}){
+function BotDisplay({name,health,damage,armor,bot_class,catchphrase,image,created_at,updated_at,deleteRobot,selectRobot}){
 
 
   return(
 
-<div className="card-group">
-<div className="card">
+<div className="card-deck">
+<button onClick={selectRobot} className="card">
     <img className="card-img" src={image}alt={name} />
   <div className="card-body">
     <h3 className="card-title">{name}</h3>
@@ -20,7 +20,7 @@ function BotDisplay({name,health,damage,armor,bot_class,catchphrase,image,create
   <button onClick={deleteRobot}className="card-btn">DELETE</button>
   
   </div>
-</div>
+</button>
 </div>
 
 
