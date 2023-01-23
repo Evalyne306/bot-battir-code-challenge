@@ -47,7 +47,7 @@ function FetchBots() {
               image={bot.avatar_url}
               created_at={bot.created_at}
               updated_at={bot.updated_at}
-              // deleteTransaction={()=>deleteArrayItem(bot)}
+               deleteRobot={()=>deleteArrayItem(bot)}
             />
           </div>
         );

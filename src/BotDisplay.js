@@ -1,6 +1,6 @@
 import React from "react"
 
-function BotDisplay({name,health,damage,armor,bot_class,catchphrase,image,created_at,updated_at}){
+function BotDisplay({name,health,damage,armor,bot_class,catchphrase,image,created_at,updated_at,deleteRobot}){
 
 
   return(
@@ -17,7 +17,7 @@ function BotDisplay({name,health,damage,armor,bot_class,catchphrase,image,create
     <p className="card-text">{catchphrase}</p>
     <p className="card-text">{updated_at}</p>
     <p className="card-text">{created_at}</p>
-  <button className="card-btn">DELETE</button>
+  <button onClick={deleteRobot}className="card-btn">DELETE</button>
   
   </div>
 </div>
