@@ -19,7 +19,8 @@ Install Node.js on WSL 2: These instructions use Node Version Manager(nvm) for i
 # To view the Bot Battir directly
 This can be done by clicking the link below;
 
-* 
+https://lucent-parfait-1f4cea.netlify.app/
+
 # Getting Started with Create React App 
 
 To use this repo on your machine requires some simple steps
