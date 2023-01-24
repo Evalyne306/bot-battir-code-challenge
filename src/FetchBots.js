@@ -3,6 +3,7 @@ import "./App.css";
 import BotDisplay from "./BotDisplay";
 import axios from "axios";
 import SearchRobot from "./RobotSearch";
+
 function FetchBots() {
   const [bots, setBots] = useState([]);
   useEffect(() => {
@@ -12,7 +13,7 @@ function FetchBots() {
       // setRobotName(res.data.id);
     });
   }, []);
-  console.log(bots)
+  
   function Search(searchValue){
     let result=bots.filter((bot)=>{
     return bot.name.toLowerCase().includes(searchValue.toLowerCase())
