@@ -49,8 +49,8 @@ text-align: justify;
 
 }
 .card-img{
-width: 14rem;
-height: 11rem;
+width: 200px;
+height: 200px;
 object-fit: contain;
 }
 .card:hover{
@@ -104,5 +104,7 @@ line-height: 1.2rem;
   width: 100%;
   background-color: rgb(242, 163, 6)
 }
-
+.selected-bots{
+  font-family: 'Bungee Spice', cursive;
+}
 

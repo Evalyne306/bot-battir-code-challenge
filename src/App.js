@@ -9,8 +9,13 @@ function App(){
  return (
 
    <div className="transactions-container">
-     <header className="bankHeader">
+     <header>
+     <div className="bankHeader">
        <p>BOT BATTIR</p>
+     </div>
+     <div className="selected-bots">
+     <h1><b><i>Your Selected Bots:</i></b></h1>
+     </div>
      </header> 
 
   <div className="card1" id="Army"></div>
