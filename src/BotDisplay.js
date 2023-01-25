@@ -17,7 +17,7 @@ function BotDisplay({name,health,damage,armor,bot_class,catchphrase,image,create
   >
 
 <div className="card-deck">
-<div className="card">
+<button className="card">
     <img className="card-img" src={image}alt={name} />
   <div className="card-body">
     <h2 className="card-title">Name: {name}</h2><br></br>
@@ -31,7 +31,7 @@ function BotDisplay({name,health,damage,armor,bot_class,catchphrase,image,create
   <button onClick={deleteRobot}className="card-btn">DELETE</button>
   
   </div>
-</div>
+</button>
 </div>
 </div>
 

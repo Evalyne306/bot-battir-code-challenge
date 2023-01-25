@@ -21,7 +21,6 @@ function FetchBots() {
     NewArmy.setAttribute("id", id)
 
     NewArmy.innerHTML = `
-    <div classname="card">
     <img className="card-img" src=${image}alt=${name} />
     <h2 className="card-title">Name: ${name}</h2><br></br>
     <p className="card-text">Health: ${health} %</p>
@@ -31,7 +30,6 @@ function FetchBots() {
     <p className="card-text">${catchphrase}</p>
     <p className="card-text">Update Last: ${updated_at}</p>
     <p className="card-text">Created When: ${created_at}</p>
-    <div/>
     `
 
     Army.appendChild(NewArmy)

@@ -7,11 +7,17 @@
   font-family: 'Bungee Spice', cursive;
   height: 200px;
 }
-.wrapper{
+.selected-bots{
   display: grid;
   width: 100%;
-  height: 100%;
-  grid-template-columns:repeat(auto-fit, minmax(14rem, 16rem));
+  height: 450px;
+  margin: 0 auto;
+  margin-top: 5px;
+  grid-gap: 20px;
+  box-sizing: border-box;
+  grid-template-columns:repeat(4, minmax(200px, 0.5fr));
+  background-color: rgb(234, 188, 6);
+ 
 } 
 .search{
   margin-top: 10px;
@@ -30,19 +36,19 @@
 
 .card{
   float: right;
-  width: 13.5%;
+  width: 20%;
   padding: 0px;
   background-color: rgb(234, 188, 6);
   margin-top: 10px;
 cursor: pointer;
-margin-left: 128px;
+
+
 
 }
 .card1{
-  float: left;
+  display: flex;
   width: 17.5%;
   padding: 1px;
-  background-color: rgb(234, 188, 6);
   margin-top: 10px;
 cursor: pointer;
 text-align: justify;
@@ -104,7 +110,7 @@ line-height: 1.2rem;
   width: 100%;
   background-color: rgb(242, 163, 6)
 }
-.selected-bots{
+.selected-bot{
   font-family: 'Bungee Spice', cursive;
 }
 

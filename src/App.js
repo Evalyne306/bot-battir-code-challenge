@@ -14,11 +14,12 @@ function App(){
        <p>BOT BATTIR</p>
      </div>
      <div className="selected-bots">
-     <h1><b><i>Your Selected Bots:</i></b></h1>
+     {/* <h1><b><i>Your Selected Bots:</i></b></h1> */}
+     <div className="card1" id="Army"></div>
      </div>
      </header> 
 
-  <div className="card1" id="Army"></div>
+  
      <> 
 
      <FetchBots />
