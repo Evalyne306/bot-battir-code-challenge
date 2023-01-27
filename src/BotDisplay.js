@@ -11,7 +11,7 @@ return(
      
   <div>
 <div className="card-deck">
-<button onClick={selectedBots} className="card">
+<div onClick={selectedBots} className="card">
     <img className="card-img" src={image}alt={name} />
   <div className="card-body">
     <h2 className="card-title">Name: {name}</h2><br></br>
@@ -25,7 +25,7 @@ return(
   {/* <button onClick={deleteRobot}className="card-btn">DELETE</button> */}
   
   </div>
-</button>
+</div>
 </div>
 </div>
 

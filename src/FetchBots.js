@@ -19,11 +19,10 @@ function FetchBots() {
   function handleAdd(bot) {
     console.log("JWGFJKK", bot);
     const selectedBots = [...botState];
-    console.log("sele",selectedBots)
+    console.log("sele", selectedBots);
     selectedBots.push(bot);
-    
+
     setBotState(selectedBots);
-    
   }
 
   function Search(searchValue) {
@@ -35,7 +34,7 @@ function FetchBots() {
 
   const deleteArrayItem = function (itemToBeRemoved) {
     console.log(itemToBeRemoved);
-    const tempTransactions = [...botState]
+    const tempTransactions = [...botState];
     //const tempTransactions = Object.assign([],botState);
     const findIndex = tempTransactions.findIndex(
       (a) => a.id === itemToBeRemoved.id
@@ -57,40 +56,31 @@ function FetchBots() {
         </div>
         <SearchRobot search={Search} />
         <div className="selected-bots">
-          
-          {/* <h1><b><i>Your Selected Bots:</i></b></h1> */}
-          
-          {botState.map((bot, index) => (
-            <button onClick={() => deleteArrayItem(bot)}className="unselect">
-
-            <div className="select" key={index}>
-              <img className="card-img" src={bot.avatar_url} alt="" />
-              <h2 className="card-title">Name: {bot.name}</h2>
-              <div className="card-text">Health: {bot.health} %</div>
-              <div className="card-text">Damage: {bot.damage} %</div>
-              <div className="card-text">armor: {bot.armor} %</div>
-              <div className="card-text">Class: {bot.bot_class}</div>
-              <div className="card-text">Update Last: {bot.updated_at}</div>
-              <div className="card-text">Created When: {bot.created_at}</div>
-            
+          {botState.map((bot) => (
+            <div onClick={() => deleteArrayItem(bot)} className="unselect">
+              <div className="select" key={bot.id}>
+                <img className="card-img" src={bot.avatar_url} alt="" />
+                <h2 className="card-title">Name: {bot.name}</h2>
+                <div className="card-text">Health: {bot.health} %</div>
+                <div className="card-text">Damage: {bot.damage} %</div>
+                <div className="card-text">armor: {bot.armor} %</div>
+                <div className="card-text">Class: {bot.bot_class}</div>
+                <div className="card-text">Update Last: {bot.updated_at}</div>
+                <div className="card-text">Created When: {bot.created_at}</div>
+              </div>
             </div>
-            </button>
           ))}
-          
         </div>
       </div>
-JYIGIUGSIUGF
       {bots.map((bot) => {
         return (
-          <div key={bot.id}>
+          <div className="display" key={bot.id}>
             <BotDisplay
-              // handleAdd={handleAdd}
               name={bot.name}
               health={bot.health}
               damage={bot.damage}
               armor={bot.armor}
               bot_class={bot.bot_class}
-              // catchphrase={bot.catchphrase}
               image={bot.avatar_url}
               created_at={bot.created_at}
               updated_at={bot.updated_at}
