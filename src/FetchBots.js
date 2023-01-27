@@ -57,8 +57,8 @@ function FetchBots() {
         <SearchRobot search={Search} />
         <div className="selected-bots">
           {botState.map((bot) => (
-            <div onClick={() => deleteArrayItem(bot)} className="unselect">
-              <div className="select" key={bot.id}>
+            <button onClick={() => deleteArrayItem(bot)} key={bot.id} className="unselect">
+              <div className="select" >
                 <img className="card-img" src={bot.avatar_url} alt="" />
                 <h2 className="card-title">Name: {bot.name}</h2>
                 <div className="card-text">Health: {bot.health} %</div>
@@ -68,7 +68,7 @@ function FetchBots() {
                 <div className="card-text">Update Last: {bot.updated_at}</div>
                 <div className="card-text">Created When: {bot.created_at}</div>
               </div>
-            </div>
+            </button>
           ))}
         </div>
       </div>
