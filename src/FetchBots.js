@@ -8,6 +8,7 @@ function FetchBots() {
   //const[selected, setSelected]=useState([])
   const [bots, setBots] = useState([]);
   const [botState, setBotState] = useState([]);
+  const [count, setCount] = useState(0);
   useEffect(() => {
     axios("https://api.npoint.io/24bf227b88194231eb03/bots").then((res) => {
       setBots(res.data);
@@ -16,11 +17,11 @@ function FetchBots() {
     });
   }, []);
 
-  function handleAdd(bot) {
-    console.log("JWGFJKK", bot);
+  function handleAdd(item) {
+    console.log("JWGFJKK", item);
     const selectedBots = [...botState];
     console.log("sele", selectedBots);
-    selectedBots.push(bot);
+    selectedBots.push(item);
 
     setBotState(selectedBots);
   }
@@ -34,8 +35,8 @@ function FetchBots() {
 
   const deleteArrayItem = function (itemToBeRemoved) {
     console.log(itemToBeRemoved);
-    const tempTransactions = [...botState];
-    //const tempTransactions = Object.assign([],botState);
+    // const tempTransactions = [...botState];
+    const tempTransactions = Object.assign([],botState);
     const findIndex = tempTransactions.findIndex(
       (a) => a.id === itemToBeRemoved.id
     );
@@ -44,6 +45,10 @@ function FetchBots() {
     console.log("kdJSLKJFKJ", tempTransactions.length);
     setBotState(tempTransactions);
   };
+
+  let incrementCount = () => {
+    setCount(count + 1);
+  };
   return (
     <div>
       <div className="transactions-container">
@@ -51,13 +56,13 @@ function FetchBots() {
           <div>
             <h1 className="batir">BOT BATTIR</h1>
 
-            <h1 className="botdiv">selected bot: </h1>
+            <h1 className="botdiv">selected bot: {count} </h1>
           </div>
         </div>
         <SearchRobot search={Search} />
         <div className="selected-bots">
           {botState.map((bot) => (
-            <button onClick={() => deleteArrayItem(bot)} key={bot.id} className="unselect">
+            <button onClick={() => deleteArrayItem(bot)} key={bot.id} onChange={incrementCount} className="unselect">
               <div className="select" >
                 <img className="card-img" src={bot.avatar_url} alt="" />
                 <h2 className="card-title">Name: {bot.name}</h2>
