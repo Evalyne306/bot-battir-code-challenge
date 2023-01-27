@@ -72,19 +72,19 @@ function FetchBots() {
           ))}
         </div>
       </div>
-      {bots.map((bot) => {
+      {bots.map((item) => {
         return (
-          <div className="display" key={bot.id}>
+          <div className="display" key={item.id}>
             <BotDisplay
-              name={bot.name}
-              health={bot.health}
-              damage={bot.damage}
-              armor={bot.armor}
-              bot_class={bot.bot_class}
-              image={bot.avatar_url}
-              created_at={bot.created_at}
-              updated_at={bot.updated_at}
-              selectedBots={() => handleAdd(bot)}
+              name={item.name}
+              health={item.health}
+              damage={item.damage}
+              armor={item.armor}
+              bot_class={item.bot_class}
+              image={item.avatar_url}
+              created_at={item.created_at}
+              updated_at={item.updated_at}
+              selectedBots={() => handleAdd(item)}
             />
           </div>
         );
