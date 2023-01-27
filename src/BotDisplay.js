@@ -1,23 +1,17 @@
 import React from "react"
 
-function BotDisplay({name,health,damage,armor,bot_class,catchphrase,image,created_at,updated_at,deleteRobot, handleAdd}){
+
+function BotDisplay({name,health,damage,armor,bot_class,catchphrase,image,created_at,updated_at,deleteRobot, selectedBots}){
+return(
+  <>
+  {/* {bots.map((item)=>{ */}
 
 
-  return(
+  {/* return( */}
      
-  <div 
-    onClick={(e)=>{
-      handleAdd(
-        
-        name,health,damage,armor,bot_class,catchphrase,image,created_at,updated_at,deleteRobot, handleAdd
-      )
-
-    }}
-  
-  >
-
+  <div>
 <div className="card-deck">
-<button className="card">
+<button onClick={selectedBots} className="card">
     <img className="card-img" src={image}alt={name} />
   <div className="card-body">
     <h2 className="card-title">Name: {name}</h2><br></br>
@@ -35,6 +29,9 @@ function BotDisplay({name,health,damage,armor,bot_class,catchphrase,image,create
 </div>
 </div>
 
-)
+{/* ); */}
+{/* // })} */}
+</>
+);
 }
 export default BotDisplay

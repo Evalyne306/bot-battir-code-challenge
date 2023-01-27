@@ -1,11 +1,21 @@
-.bankHeader{
-    padding: 10px;
+ .bankHeader{
+   margin: 0;
   text-align: center;
+  padding-top: 0px;
   background: rgb(24, 22, 22);
-  color: white;
-  font-size: 90px;
   font-family: 'Bungee Spice', cursive;
-  height: 200px;
+  height: 150px; 
+   
+} 
+.batir{
+ font-size: 70px;
+ padding-top: 30px;
+  
+}
+.botdiv{
+text-align: left;
+padding: 0;
+margin: 0;
 }
 .selected-bots{
   display: grid;
@@ -13,10 +23,10 @@
   height: 450px;
   margin: 0 auto;
   margin-top: 5px;
-  grid-gap: 20px;
+  grid-gap: 10px;
   box-sizing: border-box;
-  grid-template-columns:repeat(4, minmax(200px, 0.5fr));
-  background-color: rgb(234, 188, 6);
+  grid-template-columns:repeat(10, minmax(200px, 0.5fr));
+  background-color: rgb(242, 163, 6);
  
 } 
 .search{
@@ -54,6 +64,11 @@ cursor: pointer;
 text-align: justify;
 
 }
+.card1-img{
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  }
 .card-img{
 width: 200px;
 height: 200px;
