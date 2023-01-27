@@ -5,9 +5,9 @@ import axios from "axios";
 import SearchRobot from "./RobotSearch";
 
 function FetchBots() {
- //const[selected, setSelected]=useState([])
+  //const[selected, setSelected]=useState([])
   const [bots, setBots] = useState([]);
-  const[botState, setBotState]= useState([])
+  const [botState, setBotState] = useState([]);
   useEffect(() => {
     axios("https://api.npoint.io/24bf227b88194231eb03/bots").then((res) => {
       setBots(res.data);
@@ -17,10 +17,13 @@ function FetchBots() {
   }, []);
 
   function handleAdd(bot) {
-    console.log("JWGFJKK",bot);
+    console.log("JWGFJKK", bot);
     const selectedBots = [...botState];
+    console.log("sele",selectedBots)
     selectedBots.push(bot);
+    
     setBotState(selectedBots);
+    
   }
 
   function Search(searchValue) {
@@ -32,50 +35,51 @@ function FetchBots() {
 
   const deleteArrayItem = function (itemToBeRemoved) {
     console.log(itemToBeRemoved);
-    const tempTransactions = Object.assign([], bots);
+    const tempTransactions = [...botState]
+    //const tempTransactions = Object.assign([],botState);
     const findIndex = tempTransactions.findIndex(
       (a) => a.id === itemToBeRemoved.id
     );
 
     findIndex !== -1 && tempTransactions.splice(findIndex, 1);
     console.log("kdJSLKJFKJ", tempTransactions.length);
-    setBots(tempTransactions);
+    setBotState(tempTransactions);
   };
   return (
     <div>
-       
-            <div className="transactions-container">
-        
-          <div className="bankHeader">
-          
-             <div>
-             <h1 className="batir">BOT BATTIR</h1>
-          
-          <h1 className="botdiv">selected bot: </h1>
-            </div>
-          </div>
-          <SearchRobot search={Search} />
-          <div className="selected-bots">
-            
-            {/* <h1><b><i>Your Selected Bots:</i></b></h1> */}
-            {botState.map((bot,index)=>(
-            <div className="select"key={index} >
- <img className="card-img" src={bot.avatar_url}alt="" />
- <h2 className="card-title">Name: {bot.name}</h2><br></br>
-    <div className="card-text">Health: {bot.health} %</div>
-    <div className="card-text">Damage: {bot.damage} %</div> 
-    <div className="card-text">armor: {bot.armor} %</div>
-    <div className="card-text">Class: {bot.bot_class}</div>
-    <div className="card-text">Update Last: {bot.updated_at}</div>
-    <div className="card-text">Created When: {bot.created_at}</div>
-            </div>
-             ))}
-          </div>
-         
-        
-      </div>
-     
+      <div className="transactions-container">
+        <div className="bankHeader">
+          <div>
+            <h1 className="batir">BOT BATTIR</h1>
 
+            <h1 className="botdiv">selected bot: </h1>
+          </div>
+        </div>
+        <SearchRobot search={Search} />
+        <div className="selected-bots">
+          
+          {/* <h1><b><i>Your Selected Bots:</i></b></h1> */}
+          
+          {botState.map((bot, index) => (
+            <button onClick={() => deleteArrayItem(bot)}className="unselect">
+
+            <div className="select" key={index}>
+              <img className="card-img" src={bot.avatar_url} alt="" />
+              <h2 className="card-title">Name: {bot.name}</h2>
+              <div className="card-text">Health: {bot.health} %</div>
+              <div className="card-text">Damage: {bot.damage} %</div>
+              <div className="card-text">armor: {bot.armor} %</div>
+              <div className="card-text">Class: {bot.bot_class}</div>
+              <div className="card-text">Update Last: {bot.updated_at}</div>
+              <div className="card-text">Created When: {bot.created_at}</div>
+            
+            </div>
+            </button>
+          ))}
+          
+        </div>
+      </div>
+JYIGIUGSIUGF
       {bots.map((bot) => {
         return (
           <div key={bot.id}>
@@ -90,13 +94,11 @@ function FetchBots() {
               image={bot.avatar_url}
               created_at={bot.created_at}
               updated_at={bot.updated_at}
-              deleteRobot={() => deleteArrayItem(bot)}
-           selectedBots={()=>handleAdd(bot)}
-           />
+              selectedBots={() => handleAdd(bot)}
+            />
           </div>
         );
       })}
-
     </div>
   );
 }

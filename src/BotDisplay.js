@@ -22,15 +22,14 @@ return(
     <div className="card-text">{catchphrase}</div>
     <div className="card-text">Update Last: {updated_at}</div>
     <div className="card-text">Created When: {created_at}</div>
-  <button onClick={deleteRobot}className="card-btn">DELETE</button>
+  {/* <button onClick={deleteRobot}className="card-btn">DELETE</button> */}
   
   </div>
 </button>
 </div>
 </div>
 
-{/* ); */}
-{/* // })} */}
+
 </>
 );
 }
